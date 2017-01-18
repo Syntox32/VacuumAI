@@ -3,14 +3,12 @@ Vacuum cleaner AI for IMT3591 assignment at NTNU University 2017
 
 ## Design
 
-**PEAS** Principle
+The Reflex/Reactive agent:
 
-### The Reflex/Reactive agent
-
-Perception:  The agent can perceive dirt in the cell it's currently in.
-Environment: It can move left or right based on wheter the cell is clean.
-Actuators:   It can clean dirt.
-Sensors:     It can detect dirt.
+* **P**erception:  The agent can perceive dirt in the cell it's currently in.
+* **E**nvironment: It can move left or right based on wheter the cell is clean.
+* **A**ctuators:   It can clean dirt.
+* **S**ensors:     It can detect dirt.
 
 ## Language
 
