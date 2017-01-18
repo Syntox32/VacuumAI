@@ -7,6 +7,39 @@ class World:
         self.width = width
         self.height = height
 
+class Map:
+
+    def __init__(self, width, height):
+        """
+        :param width:
+        :param height:
+        """
+        self.rows = []
+
+        for h in range(height):
+            temp = [Cell(w, h) for w in range(width)]
+            self.rows.append(temp)
+
+
+    def __getitem__(self, idx):
+        """
+        Get a cell by index.
+
+        can be used like:
+
+            map = Map(10, 10)
+            cell = map[0][1]
+
+        :param idx: index of the elemnet you wish to get.
+        :return:
+        """
+        if not isinstance(idx, int):
+            raise TypeError("Item cannot be of other type than 'int'")
+        elif idx < 0 or idx >= len(self.cells):
+            raise IndexError("Index out of range.")
+
+        return self.rows[idx]
+
 
 class Cell:
     """
