@@ -1,5 +1,5 @@
 import sys
-from Environment import Environment
+from environment import Environment
 
 
 def main():
