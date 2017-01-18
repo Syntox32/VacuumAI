@@ -1,8 +1,8 @@
 
 
-class VacuumAgent:
+class Agent:
     """
-    Simple reflex agent.
+    Simple agent template.
 
     See more here:  https://i.milje.me/17-01/18aa5e2.png
     """
