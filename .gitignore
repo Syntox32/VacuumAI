@@ -133,3 +133,8 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+
+# Stop interpreters changing over commits over different environments
+.idea/VacuumAI.iml
+.idea/misc.xml
