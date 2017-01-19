@@ -1,13 +1,37 @@
-import unittest
-
 # AI classes
-from environment import Environment
+from unittest import TestCase
+from world import Map
+from world import Cell
 
 
-class GeneralTests(unittest.TestCase):
+class TestMap(TestCase):
+    def test_add_cell(self):
+        m = Map()
+        m.add_cell(0, 0)
+        self.assertIsNotNone(m.cells[0])
+        pass
 
-    def __init__(self): pass
+    def test_get_cell(self):
+        m = Map()
+        m.add_cell(0, 1)
+        m.add_cell(1, 1)
 
-    def test_envioronment_init(self):
-        env = Environment(10, 10)
-        assert env not None
+        self.assertIsNotNone(m.get_cell(0, 1))
+        self.assertIsNone(m.get_cell(0, 0))
+
+        self.assertIsNotNone(m.get_cell(1, 1))
+        self.assertIsNone(m.get_cell(1, 0))
+
+
+class TestCell(TestCase):
+    def test_add_modifier(self):
+        c = Cell(0, 0)
+        c.add_modifier("hello", 15)
+        self.assertIs(c.modifiers["hello"], 15)
+
+    def test_contains_modifier(self):
+        c = Cell(0, 0)
+        c.add_modifier("hello", 15)
+
+        self.assertIs(c.contains_modifier("hello"), True)
+        self.assertIs(c.contains_modifier("not"), False)
