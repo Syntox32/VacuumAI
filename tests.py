@@ -1,5 +1,5 @@
 # AI classes
-from unittest import TestCase
+from unittest import TestCase, main
 from world import Map
 from world import Cell
 
@@ -35,3 +35,6 @@ class TestCell(TestCase):
 
         self.assertIs(c.contains_modifier("hello"), True)
         self.assertIs(c.contains_modifier("not"), False)
+
+if __name__ == "__main__":
+    main()
