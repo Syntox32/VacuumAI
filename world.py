@@ -1,4 +1,21 @@
 
+class World:
+    """
+    """
+
+    def __init__(self, width: int, height: int):
+        """
+        :param width:
+        :param height:
+        """
+        self.map = Map()
+
+        # Init map with dimensions
+        for w in width:
+            for h in height:
+                self.map.add_cell(w, h)
+
+
 
 class Map:
     """
