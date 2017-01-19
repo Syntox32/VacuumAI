@@ -68,9 +68,6 @@ class CellColumn:
         if not isinstance(idx, int):
             raise TypeError("Item cannot be of other type than 'int'")
 
-        if idx + self.offset < 0 or idx + self.offset > len(self.column):
-            return None
-
         return next((c for c in self.column if c.y + self.offset == idx), None)
 
 

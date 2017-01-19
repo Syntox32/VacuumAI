@@ -1,4 +1,5 @@
 import sys
+from world import Map
 
 
 def main():
