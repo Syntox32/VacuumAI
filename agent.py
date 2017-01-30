@@ -19,7 +19,12 @@ class Agent:
     """
 
     def __init__(self):
-        pass
+        self.x = 0
+        self.y = 0
+
+    def set_pos(self, x, y):
+        self.x = x
+        self.y = y
 
     def perceive(self, cell):
         """
@@ -28,7 +33,17 @@ class Agent:
         :param cell: The cell the agent is currently on.
         :return: Returns if the cell the agent is on is dirty
         """
-        return cell.dirty
+        if cell.x is 0 and cell.dirty is True:
+            return Perceive(True, False, True)
+
+        elif cell.x is 0 and cell.dirty is False:
+            return Perceive(True, False, False)
+
+        elif cell.x is 1 and cell.dirty is True:
+            return Perceive(False, True, True)
+
+        elif cell.x is 1 and cell.dirty is False:
+            return Perceive(False, True, False)
 
     def determine_action(self, state):
         """
@@ -38,8 +53,12 @@ class Agent:
         :return: Actuator action
         """
 
-        if state is True:
+        if state.dirty:
             return Agent.CLEAN
+        if state.right:
+            return Agent.MOVE_L
+        if state.left:
+            return Agent.MOVE_R
 
         return Agent.NOOP
 
