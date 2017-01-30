@@ -11,7 +11,7 @@ class VacuumSimulation:
         """
         self.width = kwargs.pop("width", 1)
         self.height = kwargs.pop("height", 2)
-        self.do_steps = kwargs.pop("steps", 10)
+        self.do_steps = kwargs.pop("do_steps", 10)
 
         self.world = World(self.width, self.height)
         self.agent = Agent()

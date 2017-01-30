@@ -8,7 +8,7 @@ def main():
                          do_steps=10)
 
     # Configuration 1
-    v.reset() # For good measure
+    v.reset()  # For good measure
     v.spawn_agent(0, 0)
     results = v.run()
     print(results)
