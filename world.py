@@ -1,4 +1,3 @@
-from agent import Agent
 
 class World:
     """
@@ -15,6 +14,9 @@ class World:
         for w in range(width):
             for h in range(height):
                 self.map.add_cell(w, h)
+
+        for cell in self.map.cells:
+            cell.dirty = random.randint(1, 4) is 4
 
     def get_cell_for(self, agent: Agent):
         self.map[agent.x][agent.y]
