@@ -34,8 +34,7 @@ class VacuumSimulation:
         """
 
         for i in range(self.do_steps):
-            self.agent.perceive(self.world.get_cell_for(self.agent))
-            action = self.agent.step()
+            action = self.agent.step(self.world.get_cell_for(self.agent))
             if action == Agent.CLEAN:
                 self.world.clean_cell_under(self.agent)
                 self.cells_cleaned += 1
