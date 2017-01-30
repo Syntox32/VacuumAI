@@ -1,3 +1,4 @@
+from agent import Agent
 
 class World:
     """
@@ -15,6 +16,8 @@ class World:
             for h in range(height):
                 self.map.add_cell(w, h)
 
+    def get_cell_for(self, agent: Agent):
+        self.map[agent.x][agent.y]
 
 
 class Map:
