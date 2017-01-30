@@ -14,7 +14,7 @@ class VacuumSimulation:
         self.do_steps = kwargs.pop("steps", 10)
 
         self.world = World(self.width, self.height)
-        self.agent = Agent(self.world)
+        self.agent = Agent()
 
         self.cells_cleaned = 0
         self.steps_taken = 0
