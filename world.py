@@ -22,8 +22,11 @@ class World:
         for cell in self.map.cells:
             cell.dirty = random.randint(1, 4) is 4
 
+    def clean_cell_under(self, agent: Agent):
+        self.map[agent.x][agent.y].dirty = False
+
     def get_cell_for(self, agent: Agent):
-        self.map[agent.x][agent.y]
+        return self.map[agent.x][agent.y]
 
 
 class Map:
