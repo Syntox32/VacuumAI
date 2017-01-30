@@ -35,6 +35,7 @@ class VacuumSimulation:
 
         for i in range(self.do_steps):
             action = self.agent.step(self.world.get_cell_for(self.agent))
+            self.world.step()
             if action == Agent.CLEAN:
                 self.world.clean_cell_under(self.agent)
                 self.cells_cleaned += 1
@@ -44,6 +45,7 @@ class VacuumSimulation:
                 self.agent.x += 1
             elif action == Agent.NOOP:
                 pass
+            self.steps_taken += 1
 
         return {
             "cells_cleaned": self.cells_cleaned,

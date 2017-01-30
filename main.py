@@ -5,7 +5,7 @@ from simulation import VacuumSimulation
 def main():
     v = VacuumSimulation(width=2,
                          height=1,
-                         do_steps=10)
+                         do_steps=10000)
 
     # Configuration 1
     v.reset()  # For good measure
