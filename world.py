@@ -20,7 +20,8 @@ class World:
                 self.map.add_cell(w, h)
 
         for cell in self.map.cells:
-            cell.dirty = random.randint(1, 4) is 4
+            if not cell.dirty:
+                cell.dirty = random.randint(1, 4) is 4
 
     def clean_cell_under(self, agent: Agent):
         self.map[agent.x][agent.y].dirty = False
@@ -30,7 +31,8 @@ class World:
 
     def step(self):
         for cell in self.map.cells:
-            cell.dirty = random.randint(1, 4) is 4
+            if not cell.dirty:
+                cell.dirty = random.randint(1, 4) is 4
 
 
 class Map:
