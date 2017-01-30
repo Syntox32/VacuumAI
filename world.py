@@ -25,6 +25,10 @@ class World:
     def get_cell_for(self, agent: Agent):
         self.map[agent.x][agent.y]
 
+    def step(self):
+        for cell in self.map.cells:
+            cell.dirty = random.randint(1, 4) is 4
+
 
 class Map:
     """
@@ -103,28 +107,11 @@ class Cell:
     """
     x = 0
     y = 0
-    modifiers = {}
+    dirty = False
 
     def __init__(self, x: int, y: int):
         self.x = x
         self.y = y
-
-    def add_modifier(self, name: str, value: int):
-        """
-        Adds a modifier with name and value to the Cell.
-        :param name: The name of the modifier
-        :param value: The value of the modifier
-        :return: None
-        """
-        self.modifiers[name] = value
-
-    def contains_modifier(self, name: str):
-        """
-        Checks if the cell contains a modifier.
-        :param name: The name of the modifier
-        :return: A bool if the cell contains the modifier or not
-        """
-        return name in self.modifiers
 
 
 class Perceiver:
