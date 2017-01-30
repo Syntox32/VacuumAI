@@ -47,7 +47,6 @@ class VacuumSimulation:
                 self.steps_taken += 1
             elif action == Agent.NOOP:
                 pass
-            self.steps_taken += 1
 
         return {
             "cells_cleaned": self.cells_cleaned,
