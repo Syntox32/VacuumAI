@@ -41,8 +41,10 @@ class VacuumSimulation:
                 self.cells_cleaned += 1
             elif action == Agent.MOVE_L:
                 self.agent.x -= 1
+                self.steps_taken += 1
             elif action == Agent.MOVE_R:
                 self.agent.x += 1
+                self.steps_taken += 1
             elif action == Agent.NOOP:
                 pass
             self.steps_taken += 1
