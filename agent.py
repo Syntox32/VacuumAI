@@ -48,9 +48,8 @@ class Agent:
     def determine_action(self, state):
         """
 
-        :param state:
-        :param rule:
-        :return: Actuator action
+        :param state: The state of the perceived cell/world
+        :return: Agent action
         """
 
         if state.dirty:
@@ -65,9 +64,8 @@ class Agent:
     def step(self, cell):
         """
         Perform the different actions for the agent.
-        This is not meant to be overriden.
 
-        :return: void
+        :return: Agent action
         """
         perceived_state = self.perceive(cell)
         return self.determine_action(perceived_state)
