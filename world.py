@@ -11,8 +11,8 @@ class World:
         self.map = Map()
 
         # Init map with dimensions
-        for w in width:
-            for h in height:
+        for w in range(width):
+            for h in range(height):
                 self.map.add_cell(w, h)
 
 
