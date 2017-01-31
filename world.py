@@ -29,6 +29,14 @@ class World:
     def get_cell_for(self, agent: Agent):
         return self.map[agent.x][agent.y]
 
+    def clean_cell(self, x, y):
+        if self.map[x][y] is not None:
+            self.map[x][y].dirty = False
+
+    def dirty_cell(self, x, y):
+        if self.map[x][y] is not None:
+            self.map[x][y].dirty = True
+
     def step(self):
         for cell in self.map.cells:
             if not cell.dirty:

@@ -28,6 +28,12 @@ class VacuumSimulation:
     def spawn_agent(self, x=0, y=0):
         self.agent.set_pos(x, y)
 
+    def clean_dirt(self, x=0, y=0):
+        self.world.clean_cell(x, y)
+
+    def dirty_cell(self, x=0, y=0):
+        self.world.dirty_cell(x, y)
+
     def run(self):
         """
         :return: A dictionary with the simulation parameters
