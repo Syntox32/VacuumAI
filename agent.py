@@ -28,7 +28,8 @@ class Agent:
 
     def perceive(self, cell):
         """
-        Perceive the environment.
+        Perceive the environment. For this perceive function it is expected that the environment is 2 cells wide
+        and 1 cell high with the first cell at (0,0) and the second cell at (1,0)
 
         :param cell: The cell the agent is currently on.
         :return: Returns if the cell the agent is on is dirty
@@ -45,12 +46,17 @@ class Agent:
         elif cell.x is 1 and cell.dirty is False:
             return Perceive(False, True, False)
 
+        return None
+
     def determine_action(self, state):
         """
 
         :param state: The state of the perceived cell/world
         :return: Agent action
         """
+
+        if state is None:
+            return Agent.NOOP
 
         if state.dirty:
             return Agent.CLEAN
